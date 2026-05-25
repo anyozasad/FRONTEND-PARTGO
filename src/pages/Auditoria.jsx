@@ -1,0 +1,3 @@
+import { useEffect, useState } from 'react';
+import { apiFetch } from '../services/api';
+export default function Auditoria(){const [items,setItems]=useState([]);useEffect(()=>{apiFetch('/auditoria').then(setItems).catch(console.error)},[]);return <><h3>Auditoría del sistema</h3><p className='text-muted'>Registro de acciones administrativas.</p><div className='table-responsive'><table className='table table-hover'><thead><tr><th>ID</th><th>Usuario</th><th>Acción</th><th>Tabla</th><th>Descripción</th><th>Fecha</th></tr></thead><tbody>{items.map(i=><tr key={i.id}><td>{i.id}</td><td>{i.usuario_id}</td><td>{i.accion}</td><td>{i.tabla_afectada}</td><td>{i.descripcion}</td><td>{i.fecha}</td></tr>)}</tbody></table></div></>}

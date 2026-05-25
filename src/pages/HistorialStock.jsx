@@ -1,0 +1,3 @@
+import { useEffect, useState } from 'react';
+import { apiFetch } from '../services/api';
+export default function HistorialStock(){const [items,setItems]=useState([]);useEffect(()=>{apiFetch('/historial_stock').then(setItems).catch(console.error)},[]);return <><h3>Historial de stock</h3><p className='text-muted'>Movimientos de stock por compras y ventas.</p><div className='table-responsive'><table className='table table-hover'><thead><tr><th>ID</th><th>Producto</th><th>Anterior</th><th>Nuevo</th><th>Movimiento</th><th>Referencia</th></tr></thead><tbody>{items.map(i=><tr key={i.id}><td>{i.id}</td><td>{i.producto_id}</td><td>{i.stock_anterior}</td><td>{i.stock_nuevo}</td><td>{i.movimiento}</td><td>{i.referencia}</td></tr>)}</tbody></table></div></>}

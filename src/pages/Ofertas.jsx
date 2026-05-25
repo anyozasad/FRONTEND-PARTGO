@@ -1,0 +1,2 @@
+import AdminCrudSimple from './AdminCrudSimple';
+export default function Ofertas(){return <AdminCrudSimple titulo="Ofertas y promociones" recurso="ofertas" campos={[{name:'producto_id',label:'ID producto',type:'number',required:true},{name:'nombre',label:'Nombre oferta'},{name:'descuento',label:'Descuento %',type:'number'},{name:'fecha_inicio',label:'Fecha inicio',type:'date'},{name:'fecha_fin',label:'Fecha fin',type:'date'},{name:'estado',label:'Estado',type:'number',default:1}]} />;}
