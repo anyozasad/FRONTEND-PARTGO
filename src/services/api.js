@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api/v1';
+const API_URL = 'https://proyecto-2ql0.onrender.com/api/v1';
 
 export async function apiFetch(endpoint, options = {}) {
   const token = localStorage.getItem('partgo_token');
